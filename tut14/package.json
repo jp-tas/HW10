@@ -5,6 +5,7 @@
   "description": "IS 545 Tutorial 14: PostgreSQL book CRUD",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build.cjs",
     "start": "node index.js",
     "db:setup": "node setup.js"
   },

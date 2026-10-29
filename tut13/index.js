@@ -10,8 +10,6 @@ const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: /[?&]sslmode=disable(?:&|$)/.test(process.env.DATABASE_URL || "")
-        ? false : { rejectUnauthorized: false },
     max: 2
 });
 

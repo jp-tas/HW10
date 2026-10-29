@@ -5,6 +5,7 @@
   "description": "Tutorial 13: PostgreSQL product input and output",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build.cjs",
     "start": "node index.js"
   },
   "engines": {

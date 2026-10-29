@@ -1,6 +1,11 @@
+/build/
 node_modules/
 .env
 .env.*
 !.env.example
+.neon
+/tas_tut13.zip
+/tas_tut14.zip
 .DS_Store
+._*
 npm-debug.log*

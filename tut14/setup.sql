@@ -14,6 +14,7 @@ INSERT INTO books (book_id, title, author, comments) VALUES
 ON CONFLICT (book_id) DO NOTHING;
 
 SELECT setval(pg_get_serial_sequence('books', 'book_id'),
-              (SELECT MAX(book_id) FROM books));
+              GREATEST((SELECT MAX(book_id) FROM books),
+                       (SELECT last_value FROM books_book_id_seq)));
 
 COMMIT;
