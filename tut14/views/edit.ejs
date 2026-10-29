@@ -1,0 +1,10 @@
+<%- include("_header") %>
+<h1>Update a record</h1>
+<form action="/edit/<%= model.book_id %>" method="post">
+    <%- include("_editor") %>
+    <div class="offset-sm-2">
+        <button class="btn btn-warning" type="submit">Update</button>
+        <a class="btn btn-outline-dark" href="/books">Cancel</a>
+    </div>
+</form>
+<%- include("_footer") %>

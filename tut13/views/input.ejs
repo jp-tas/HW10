@@ -1,0 +1,32 @@
+<%- include("_header") %>
+<h1>Select a file with products for Database Insert</h1>
+<form action="/input" method="post" enctype="multipart/form-data">
+    <p><label for="filename">Product file</label></p>
+    <p><input type="file" name="filename" id="filename" required></p>
+    <button type="submit">Submit</button>
+</form>
+<p id="result" role="status"></p>
+<script>
+    const form = document.querySelector("form");
+    const result = document.getElementById("result");
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+        const button = form.querySelector("button");
+        button.disabled = true;
+        result.textContent = "Processing...";
+        try {
+            const response = await fetch("/input", {
+                method: "POST", body: new FormData(form)
+            });
+            const message = await response.text();
+            if (!response.ok) throw new Error(message);
+            result.textContent = message;
+        } catch (error) {
+            result.textContent = error.message.startsWith("Error")
+                ? error.message : `Error: ${error.message}`;
+        } finally {
+            button.disabled = false;
+        }
+    });
+</script>
+<%- include("_footer") %>

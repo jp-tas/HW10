@@ -1,0 +1,8 @@
+<%- include("_header") %>
+<h1><%= model.title %></h1>
+<ul>
+    <% for (const item of model.items) { %>
+        <li><%= item %></li>
+    <% } %>
+</ul>
+<%- include("_footer") %>

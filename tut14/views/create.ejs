@@ -1,0 +1,10 @@
+<%- include("_header") %>
+<h1>Create a record</h1>
+<form action="/create" method="post">
+    <%- include("_editor") %>
+    <div class="offset-sm-2">
+        <button class="btn btn-success" type="submit">Save</button>
+        <a class="btn btn-outline-dark" href="/books">Cancel</a>
+    </div>
+</form>
+<%- include("_footer") %>
